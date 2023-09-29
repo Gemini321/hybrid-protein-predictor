@@ -1,0 +1,48 @@
+output_dir: ~/scratch/torchprotein_output/
+
+dataset:
+  class: Stability
+  path: ~/scratch/protein-datasets/
+  atom_feature: null
+  bond_feature: null
+  transform:
+    class: Compose
+    transforms:
+      - class: ProteinView
+        view: "residue"
+
+task:
+  class: PropertyPrediction
+  model:
+    class: ProteinHybridNetwork
+    model1:
+      class: ProteinConvolutionalNetwork
+      input_dim: 21
+      hidden_dims: [1024, 1024]
+      kernel_size: 5
+      padding: 2
+    model2:
+      class: ProtBert
+      path: ~/scratch/protbert-model-weights/
+  criterion: mse
+  metric: ["mae", "rmse", "spearmanr"]
+  normalization: False
+  num_mlp_layer: 2
+  hidden_dims: [1024]
+  conv_output: False
+
+eval_metric: spearmanr
+
+# checkpoint: /mnt/sda/2022-0526/home/wxpan/scratch/torchprotein_output/NodePropertyPrediction/SecondaryStructure/ProteinHybridNetwork_2023-09-25-18-57-59/model_epoch_42.pth
+
+optimizer:
+  class: Adam
+  lr: 1.0e-4
+
+engine:
+  gpus: [0, 1]
+  # gpus: [0]
+  batch_size: 128
+
+train:
+  num_epoch: 60
