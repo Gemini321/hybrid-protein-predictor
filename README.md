@@ -2,7 +2,7 @@
 
 本仓库用于存放AI for Science比赛"CG2302-基于机器学习的蛋白质适应度预测任务"赛题解决方案。我们设计了一个包含局部特征提取和全局特征学习功能的混合模型，其中局部特征提取使用卷积神经网络CNN实现，蛋白质序列的全局特征学习由预训练模型ProtBert实现。
 
-我们的代码基于PEER_Benchmark框架运行，关于PEER_Benchmark框架的详细信息请[点击此处]([点击此处](https://github.com/DeepGraphLearning/PEER_Benchmark/tree/main))。
+我们的代码基于PEER_Benchmark框架运行，关于PEER_Benchmark框架的详细信息请[点击此处](https://github.com/DeepGraphLearning/PEER_Benchmark/tree/main)。
 
 ## 安装
 
@@ -68,10 +68,10 @@ python -m torch.distributed.launch --nproc_per_node=2 script/run_multi_test.py -
 
 <div align="center">
 蛋白质荧光性预测结果
-<img src="./figs/fluorescence_result.png">
+<img src="./figs/fluorescence_result.png" style="width:60%">
 </div>
 
 <div align="center">
 蛋白质稳定性预测结果
-<img src="./figs/stability_result.png">
+<img src="./figs/stability_result.png" style="width:60%">
 </div>
