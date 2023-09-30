@@ -76,7 +76,7 @@ python -m torch.distributed.launch --nproc_per_node=2 script/run_multi_test.py -
 <img src="./figs/stability_result.png" style="width:60%">
 </div>
 
-相关链接：
+## 相关链接：
 
 * PEER_Benchmark代码：https://github.com/DeepGraphLearning/PEER_Benchmark
 * 本仓库代码网址：https://github.com/Gemini321/hybrid-protein-predictor
