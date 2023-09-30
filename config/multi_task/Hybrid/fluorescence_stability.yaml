@@ -56,9 +56,9 @@ optimizer:
   lr: 2.0e-5
 
 engine:
-  gpus: [0, 1]
+  gpus: [3, 4, 5]
   batch_size: 16
 
 train:
-  num_epoch: 100
+  num_epoch: 60
   tradeoff: 1.0

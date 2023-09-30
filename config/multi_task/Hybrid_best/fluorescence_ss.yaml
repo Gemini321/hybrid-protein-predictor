@@ -30,8 +30,8 @@ tasks:
     metric: [ "mae", "rmse", "spearmanr" ]
     normalization: False
     num_mlp_layer: 2
-    hidden_dims: [1024]
-    conv_output: False
+    hidden_dims: [1024, 256, 64]
+    conv_output: True
   - class: NodePropertyPrediction
     criterion: ce
     metric: [ "micro_acc", "macro_acc" ]
@@ -52,7 +52,7 @@ model:
 
 eval_metric: Center - Fluorescence spearmanr
 
-checkpoint: /mnt/sda/2022-0526/home/wxpan/protein/best_params/fluorescence/2MLP/fluorescence_2mlp.pth
+checkpoint: /mnt/sda/2022-0526/home/wxpan/protein/best_params/fluorescence/fluorescence_conv_4mlp.pth
 
 optimizer:
   class: Adam
@@ -63,5 +63,5 @@ engine:
   batch_size: 16
 
 train:
-  num_epoch: 100
+  num_epoch: 60
   tradeoff: 1.0

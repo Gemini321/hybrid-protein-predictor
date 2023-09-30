@@ -31,8 +31,8 @@ tasks:
     metric: [ "mae", "rmse", "spearmanr" ]
     normalization: False
     num_mlp_layer: 2
-    hidden_dims: [1024]
-    conv_output: False
+    hidden_dims: [1024, 256, 64]
+    conv_output: True
   - class: NodePropertyPrediction
     criterion: ce
     metric: [ "micro_acc", "macro_acc" ]
@@ -53,16 +53,16 @@ model:
 
 eval_metric: Center - Stability spearmanr
 
-checkpoint: /mnt/sda/2022-0526/home/wxpan/protein/best_params/stability/2MLP/stability_2mlp.pth
+checkpoint: /mnt/sda/2022-0526/home/wxpan/protein/best_params/stability/stability_conv_4mlp.pth
 
 optimizer:
   class: Adam
   lr: 2.0e-5
 
 engine:
-  gpus: [0]
+  gpus: [0, 1]
   batch_size: 32
 
 train:
-  num_epoch: 100
+  num_epoch: 60
   tradeoff: 1.0

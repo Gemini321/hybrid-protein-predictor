@@ -108,8 +108,7 @@ def build_solver(cfg, logger):
 
 
 def train_and_validate(cfg, solver):
-    # step = math.ceil(cfg.train.num_epoch / 10)
-    step = math.ceil(cfg.train.num_epoch / 20)
+    step = math.ceil(cfg.train.num_epoch / 10)
     best_score = float("-inf")
     best_epoch = -1
 
@@ -175,5 +174,4 @@ if __name__ == "__main__":
     os.chdir(output_dir)
 
     solver = build_solver(cfg, logger)
-    solver.load("/mnt/sda/2022-0526/home/wxpan/scratch/torchprotein_output/MultitaskLearning/Stability_SecondaryStructure/ProteinHybridNetwork_2023-09-28-03-08-31/model_epoch_48.pth")
     test(cfg, solver)

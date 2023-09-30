@@ -31,7 +31,7 @@ tasks:
     normalization: False
     num_mlp_layer: 2
     hidden_dims: [1024, 256, 64]
-    conv_output: False
+    conv_output: True
   - class: NodePropertyPrediction
     criterion: ce
     metric: [ "micro_acc", "macro_acc" ]
@@ -61,5 +61,5 @@ engine:
   batch_size: 16
 
 train:
-  num_epoch: 100
+  num_epoch: 60
   tradeoff: 1.0

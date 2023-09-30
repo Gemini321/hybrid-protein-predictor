@@ -52,7 +52,7 @@ python -m torch.distributed.launch --nproc_per_node=4 script/run_multi.py -c con
 
 ## 实验结果复现
 
-我们的最佳模型表现由混合模型在fluorescence_ss和stability_ss两个多任务学习环境下测试得到，训练配置放置在`./PEER_Benchmark/config/multi_task/Hybrid_best`中。模型参数在本仓库的`model_params`分支，复现前需要先将模型参数下载至本地（大小约为10GB），并配置文件中的`checkpoint`属性修改为`./best_params`中模型参数的绝对路径，再执行以下命令：
+我们的最佳模型表现由混合模型在fluorescence_ss和stability_ss两个多任务学习环境下测试得到，训练配置在`./PEER_Benchmark/config/multi_task/Hybrid_best`中。复现前需要先将模型参数（模型参数下载链接请[点击此处](https://pan.baidu.com/s/1W0rdkd1Z-QTdlMrYElkZMw?pwd=gjrd)）下载至本地并解压（大小约为10GB），并配置文件中的`checkpoint`属性修改为`./best_params`中模型参数的绝对路径，再执行以下命令：
 
 ```bash
 cd PEER_Benchmark
@@ -75,3 +75,9 @@ python -m torch.distributed.launch --nproc_per_node=2 script/run_multi_test.py -
 蛋白质稳定性预测结果
 <img src="./figs/stability_result.png" style="width:60%">
 </div>
+
+相关链接：
+
+* PEER_Benchmark代码：https://github.com/DeepGraphLearning/PEER_Benchmark
+* 本仓库代码网址：https://github.com/Gemini321/hybrid-protein-predictor
+* 模型参数下载链接：https://pan.baidu.com/s/1W0rdkd1Z-QTdlMrYElkZMw?pwd=gjrd 提取码：gjrd
