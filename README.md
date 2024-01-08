@@ -17,7 +17,8 @@ conda install scikit-learn pandas decorator ipython networkx tqdm matplotlib -y
 conda install pytorch-scatter pytorch-cluster -c pyg -c conda-forge
 pip install fair-esm transformers easydict pyyaml lmdb
 
-python -m pip install git+https://github.com/DeepGraphLearning/torchdrug/
+cd ./torchdrug
+pip install -e .
 ```
 
 ## 运行
@@ -67,13 +68,15 @@ python -m torch.distributed.launch --nproc_per_node=2 script/run_multi_test.py -
 预测结果如下：
 
 <div align="center">
-蛋白质荧光性预测结果
 <img src="./figs/fluorescence_result.png" style="width:60%">
+
+蛋白质荧光性预测结果
 </div>
 
 <div align="center">
-蛋白质稳定性预测结果
 <img src="./figs/stability_result.png" style="width:60%">
+
+蛋白质稳定性预测结果
 </div>
 
 ## 相关链接：
